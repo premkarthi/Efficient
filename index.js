@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors'); 
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4100;
 
 app.use(bodyParser.json());
 app.use(cors()); 
@@ -82,12 +82,12 @@ app.delete('/submissions/:id', async (req, res) => {
   }
 });
 
-if(process.env.STATUS === 'prod'){
-  app.use(express.static(path.join(__dirname, './userInterface/build')));
+// if(process.env.STATUS === 'prod'){
+  app.use(express.static(path.join(__dirname, './Frontend/build')));
   app.get('*', (req, res)=>{
-    res.sendFile(path.resolve(__dirname, './userInterface/build/index.html'))
+    res.sendFile(path.resolve(__dirname, './Frontend/build/index.html'))
   })
-}
+// }
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
