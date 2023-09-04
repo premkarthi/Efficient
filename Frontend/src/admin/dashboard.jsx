@@ -12,7 +12,7 @@ function Dashboard() {
             setData(res)
         })()
     
-    },[])
+    },[data])
 
     const deleteItem =async (id) =>{
         try {
