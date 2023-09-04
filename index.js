@@ -82,12 +82,11 @@ app.delete('/submissions/:id', async (req, res) => {
   }
 });
 
-// if(process.env.STATUS === 'prod'){
-  app.use(express.static(path.join(__dirname, './Frontend/build')));
-  app.get('*', (req, res)=>{
-    res.sendFile(path.resolve(__dirname, './Frontend/build/index.html'))
-  })
-// }
+app.use(express.static(path.join(__dirname, './Frontend/build')));
+app.get('*', (req, res)=>{
+  res.sendFile(path.resolve(__dirname, './Frontend/build/index.html'))
+})
+
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
