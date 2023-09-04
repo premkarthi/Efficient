@@ -2,7 +2,7 @@
 function sendToDB(props) {
   (async function(){
     try {
-      const response = await fetch(`http://localhost:4000/submissions`, {
+      const response = await fetch(`http://13.233.9.201:4100/submissions`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
