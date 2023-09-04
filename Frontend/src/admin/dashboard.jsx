@@ -6,7 +6,7 @@ function Dashboard() {
 
     useEffect(()=>{
         (async()=>{
-            let response = await fetch('http://localhost:4000/submissions')
+            let response = await fetch('http://13.233.9.201:4100/submissions')
             let res =await response.json()
     
             setData(res)
@@ -16,7 +16,7 @@ function Dashboard() {
 
     const deleteItem =async (id) =>{
         try {
-            const response = await fetch(`http://localhost:4000/submissions/${id}`, {
+            const response = await fetch(`http://13.233.9.201:4100/submissions/${id}`, {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
