@@ -75,10 +75,10 @@ app.get("/submissions", async (req, res) => {
 app.delete('/submissions/:id', async (req, res) => {
   const { id } = req.params;
   try {
-    await Todo.findByIdAndDelete(id);
+    await Submission.findByIdAndDelete(id);
     res.json({ message: 'submission deleted successfully' });
   } catch (err) {
-    res.status(500).json({ error: 'Could not delete todo' });
+    res.status(500).json({ error: 'Could not delete Submission' });
   }
 });
 
